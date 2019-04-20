@@ -1,6 +1,7 @@
 <?php
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
+require_once plugin_dir."includes/options.php";
 
 add_action( 'carbon_fields_register_fields', 'b3c_taxonomy_fields_register_callback' );
 function b3c_taxonomy_fields_register_callback() {
