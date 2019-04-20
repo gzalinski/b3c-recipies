@@ -8,12 +8,13 @@ function b3c_register_post_type_callback()
                                'name'          => __('Recipes','b3c-recipes'),
                                'singular_name' => __('Recipe','b3c-recipes'),
                            ),
-                           'supports'     => array('title','excerpt','thumbnail'),
+                           'supports'     => array('title','excerpt','thumbnail','editor'),
                            'public'      => true,
                            'has_archive' => true,
                            'rewrite'     => array( 'slug' => "recipes" ),
                            'menu_icon' => 'dashicons-carrot',
-                           'show_in_rest' => true
+                           'show_in_rest' => true,
+                           'public' => true,
                        )
     );
 
@@ -50,6 +51,7 @@ function b3c_register_post_type_callback()
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
     'show_in_rest'               => true,
+    'public' => true,
   );
   register_taxonomy( 'ingredients', array( 'b3c_recipes' ), $args );
 }

@@ -53,9 +53,10 @@ function b3c_recipes_add_template_part_content( $content ) {
 
     if ( 'b3c_recipes' == get_post_type() && is_single() ){
        
-        remove_filter( 'the_content', 'b3c_recipes_add_template_part_content' );
+       // remove_filter( 'the_content', 'b3c_recipes_add_template_part_content' );
         
         ob_start();
+            echo $content;
         	echo do_shortcode('[recipe-template]');
         return ob_get_clean();
     }
