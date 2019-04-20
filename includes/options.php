@@ -28,6 +28,7 @@ function get_ingredient_measurement(){
 function get_ingredient_nutrition_property(){
 		return array(
 	  	'' => '--',
+	  	'water' => __('Water','b3c-recipes'),
 	  	'calories' => __('Calories','b3c-recipes'),
 		'calories_fat' => __('Calories from Fat','b3c-recipes'),
 		'all_fat' => __('Total fat','b3c-recipes'),
