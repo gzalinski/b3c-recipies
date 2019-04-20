@@ -47,6 +47,7 @@ function get_ingredient_nutrition_property(){
 		'magnesium' => __('Magnesium','b3c-recipes'),
 		'zinc' => __('Zinc','b3c-recipes'),
 		'selenium' => __('Selenium','b3c-recipes'),
+		'iron' => __('Iron','b3c-recipes'),
 		'copper' => __('Copper','b3c-recipes'),
 		'manganese' => __('Manganese','b3c-recipes'),
 		'chromium' => __('Chromium','b3c-recipes'),
@@ -63,6 +64,7 @@ function get_ingredient_nutrition_property(){
 		'vitamin_b5' => sprintf( __( 'Vitamin %s', 'B5', 'b3c-recipes' ) , 'B5' ),
 		'vitamin_b6' => sprintf( __( 'Vitamin %s', 'B6', 'b3c-recipes' ) , 'B6' ),
 		'vitamin_b7' => sprintf( __( 'Vitamin %s', 'B7', 'b3c-recipes' ) , 'B7' ),
-		'vitamin_b9' => sprintf( __( 'Vitamin %s', 'B9', 'b3c-recipes' ) , 'B9' )
+		'vitamin_b9' => sprintf( __( 'Vitamin %s', 'B9', 'b3c-recipes' ) , 'B9' ),
+		'vitamin_b12' => sprintf( __( 'Vitamin %s', 'B12', 'b3c-recipes' ) , 'B12' )
 	);
 }
