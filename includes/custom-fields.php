@@ -48,10 +48,11 @@ function b3c_custom_fields_register_callback() {
 			Field::make( 'complex', 'recipe_instructions', '' )
 			//->set_layout('tabbed-vertical')
 			->add_fields( array(
+				/*
 				Field::make( 'image', 'instruction_image', '' )
-					 ->set_width( 10 ),
+					 ->set_width( 10 ),*/
 				Field::make( 'rich_text', 'instruction_text', '' )
-					 ->set_width( 80 )
+					 ->set_width( 100 )
 					 
 			 )
 			)
