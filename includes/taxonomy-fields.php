@@ -23,7 +23,7 @@ function b3c_taxonomy_fields_register_callback() {
 
 	
 		Field::make( 'complex', 'tax_nutritions_items', '' )
-        ->set_layout( 'tabbed-vertical' )
+        ->set_layout( 'tabbed-horizontal' )
         ->add_fields( array(
             Field::make( 'text', 'tax_nutritions_item_amount', 'Amount' )
             	->set_attribute( 'type', 'number' )
