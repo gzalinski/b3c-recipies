@@ -25,14 +25,18 @@ function b3c_taxonomy_fields_register_callback() {
 		Field::make( 'complex', 'tax_nutritions_items', '' )
         ->set_layout( 'tabbed-horizontal' )
         ->add_fields( array(
-            Field::make( 'text', 'tax_nutritions_item_amount', 'Amount' )
+            Field::make( 'text', 'tax_nutritions_item_amount', __('Amount','b3c-recipes') )
             	->set_attribute( 'type', 'number' )
             	->set_attribute('step','any')
-            	->set_width( 20 ),
+            	->set_width( 15 ),
 
-			Field::make( 'select', 'tax_nutritions_item_name', 'Nutrition property' )
+			Field::make( 'select', 'tax_nutritions_item_unit', __('Unite','b3c-recipes') )
+				->add_options( get_ingredient_nutrition_unit() ) //from options.php
+				->set_width( 15 ),
+
+			Field::make( 'select', 'tax_nutritions_item_name', __('Nutrition property','b3c-recipes') )
 				->add_options( get_ingredient_nutrition_property() ) //from options.php
-				->set_width( 80 ),
+				->set_width( 70 ),
         ) )
         ->set_header_template( '<% if (tax_nutritions_item_name) { %> <%- $_index %>. <%- tax_nutritions_item_name %> <% } %>' ),
 

@@ -106,14 +106,18 @@ function b3c_custom_fields_register_callback() {
 		Field::make( 'complex', 'recipe_post_nutritions_items', '' )
         ->set_layout( 'tabbed-vertical' )
         ->add_fields( array(
-            Field::make( 'text', 'amount', 'Amount' )
+            Field::make( 'text', 'amount', __('Amount','b3c-recipes')  )
             	->set_attribute( 'type', 'number' )
             	->set_attribute('step','any')
-            	->set_width( 20 ),
+            	->set_width( 15 ),
 
-			Field::make( 'select', 'property', 'Nutrition property' )
+			Field::make( 'select', 'unit', __('Unite','b3c-recipes') )
+				->add_options( get_ingredient_nutrition_unit() ) //from options.php
+				->set_width( 15 ),
+
+			Field::make( 'select', 'property', __('Nutrition property','b3c-recipes') )
 				->add_options( get_ingredient_nutrition_property() ) //from options.php
-				->set_width( 80 ),
+				->set_width( 70 ),
         ) )
         ->set_header_template( '<% if (property) { %> <%- $_index %>. <%- property %> <% } %>' ),
 

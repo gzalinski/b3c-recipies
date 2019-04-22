@@ -1,4 +1,4 @@
-<?php
+ <?php
 /*
  * Plugin Name: B3C Recipes
  *
@@ -38,6 +38,7 @@ require_once( 'includes/custom-fields.php' );
 //Shortcodes
 require_once( 'includes/shortcodes.php' );
 //Functions
+require_once('includes/functions/template-functions.php');
 require_once( 'includes/functions.php' );
 
 require_once( 'includes/options.php' );
@@ -45,25 +46,7 @@ require_once( 'includes/options.php' );
 * TEMPLATES
 */
 
-//Single Content
-add_action( 'the_content', 'b3c_recipes_add_template_part_content' );
-function b3c_recipes_add_template_part_content( $content ) {
 
-    global $post;
-
-    if ( 'b3c_recipes' == get_post_type() && is_single() ){
-       
-       // remove_filter( 'the_content', 'b3c_recipes_add_template_part_content' );
-        
-        ob_start();
-            echo $content;
-        	echo do_shortcode('[recipe-template]');
-        return ob_get_clean();
-    }
-
-    return $content;
-
-}
 
 
 
@@ -102,3 +85,25 @@ add_action( 'plugins_loaded', 'true_load_plugin_textdomain' );
 function true_load_plugin_textdomain() {
   load_plugin_textdomain( 'b3c-recipes', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 }
+
+
+
+//Single Content
+add_action( 'the_content', 'b3c_recipes_add_template_content', 10 );
+function b3c_recipes_add_template_content( $content ) {
+
+    global $post;
+
+    if ( 'b3c_recipes' == get_post_type() && is_single() ){
+       
+        ob_start();
+            echo $content;
+            require_once( 'templates/content-table.php' );
+        return ob_get_clean();
+    }
+
+    return $content;
+}
+
+//If need remove recipe template from content use
+//remove_action( 'the_content', 'b3c_recipes_add_template_part_content', 10 );

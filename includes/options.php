@@ -6,8 +6,6 @@ function get_ingredient_measurement(){
 			  'g' => __('g','b3c-recipes'),
 			  'kg' => __('kg','b3c-recipes'),
 			  'mg' => __('mg','b3c-recipes'),
-			  'oz' => __('oz','b3c-recipes'),
-			  'fl-oz' => __('fl oz','b3c-recipes'),
 			  'cups' => __('cups','b3c-recipes'),
 			  'tsp' => __('tsp','b3c-recipes'),
 			  'tbsp' => __('tbsp','b3c-recipes'),
@@ -24,11 +22,19 @@ function get_ingredient_measurement(){
 			);
 }
 
+function get_ingredient_nutrition_unit(){
+	return array(
+			  '' => '',
+			  'g' => __('g','b3c-recipes'),
+			  'mg' => __('mg','b3c-recipes'),
+			  'mcg' => __('μg','b3c-recipes'), //microgram (ug/1000 = mg)
+			  'iu' => __('IU','b3c-recipes'), //International Unit ( [iu to mcg] iu × 0.3 = mcg )
+			);
+}
 
 function get_ingredient_nutrition_property(){
 		return array(
 	  	'' => '--',
-	  	'water' => __('Water','b3c-recipes'),
 	  	'calories' => __('Calories','b3c-recipes'),
 		'calories_fat' => __('Calories from Fat','b3c-recipes'),
 		'all_fat' => __('Total fat','b3c-recipes'),
@@ -66,6 +72,7 @@ function get_ingredient_nutrition_property(){
 		'vitamin_b6' => sprintf( __( 'Vitamin %s', 'B6', 'b3c-recipes' ) , 'B6' ),
 		'vitamin_b7' => sprintf( __( 'Vitamin %s', 'B7', 'b3c-recipes' ) , 'B7' ),
 		'vitamin_b9' => sprintf( __( 'Vitamin %s', 'B9', 'b3c-recipes' ) , 'B9' ),
-		'vitamin_b12' => sprintf( __( 'Vitamin %s', 'B12', 'b3c-recipes' ) , 'B12' )
+		'vitamin_b12' => sprintf( __( 'Vitamin %s', 'B12', 'b3c-recipes' ) , 'B12' ),
+		'water' => __('Water','b3c-recipes')
 	);
 }

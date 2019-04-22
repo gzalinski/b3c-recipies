@@ -27,14 +27,14 @@
     left: 0;	
 }
 
-.b3c_recipes .ingredients .ingredients-list{
+.b3c_recipes  .ingredients-list{
 	list-style: none;
 }
-.b3c_recipes .ingredients .ingredient-item{
+.b3c_recipes  .ingredient-item{
 	margin: 0;
 	padding:0 0 0 20px ;
 }
-.b3c_recipes .ingredients .ingredient-item:before{
+.b3c_recipes  .ingredient-item:before{
     content: '';
     display: inline-block;
     width: 10px;
@@ -43,10 +43,17 @@
     background-color: #17b131;
     margin-right: 5px;
 }
-.b3c_recipes .ingredients .ingredient-item_item{
+
+.b3c_recipes  .ingredient-item__item{
 	font-weight: bold;
 }
-
+.b3c_recipes  .ingredient-item--section{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.b3c_recipes  .ingredient-item--section:before{
+    content: none;
+}
 
 /* STEP BY STEP --------------*/
 .b3c_recipes ul.recipe-steps{margin: 0; padding: 0;}
